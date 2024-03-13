@@ -1,0 +1,33 @@
+@use '@angular/material' as mat;
+@import '../../../ng-theme/scss/theme';
+
+
+.notifier {
+  border-radius: 4px;
+}
+
+mat-card.done {
+  border-left: 3px solid mat.get-theme-color($my-theme, primary, default);
+  .notifier {
+    background-color: mat.get-theme-color($my-theme, background, status-bar);
+    span {
+      color: mat.get-theme-color($my-theme, primary, default);
+    }
+    mat-icon {
+      color: mat.get-theme-color($my-theme, primary, default);
+    }
+  }
+}
+
+mat-card.todo {
+  border-left: 3px solid mat.get-theme-color($my-theme, warn, default);
+  .notifier {
+    background-color:  mat.get-theme-color($my-theme, background, status-bar);
+    span {
+      color: mat.get-theme-color($my-theme, warn, default);
+    }
+    mat-icon {
+      color: mat.get-theme-color($my-theme, warn, default);
+    }
+  }
+}

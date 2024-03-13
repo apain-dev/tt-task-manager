@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@task-manager/ng-api-client/*": ["libs/ng-api-client/*"],
+      "@task-manager/ng-api-client/": ["libs/ng-api-client/index.ts"],
+      "@task-manager/ng-pages/*": ["libs/ng-pages/*"],
+      "@task-manager/ng-tasks": ["libs/ng-tasks/index.ts"],
+      "@task-manager/ng-tasks/*": ["libs/ng-tasks/*"],
+      "@task-manager/ng-theme": ["libs/ng-theme/index.ts"],
+      "@task-manager/ng-theme/*": ["libs/ng-theme/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

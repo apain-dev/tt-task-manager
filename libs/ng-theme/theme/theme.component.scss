@@ -1,0 +1,26 @@
+@use '@angular/material' as mat;
+@import '../scss/theme';
+
+
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+a.active {
+  background-color: mat.get-theme-color($my-theme, background, status-bar);
+}
