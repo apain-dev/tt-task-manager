@@ -14,7 +14,7 @@ import {
 } from './task.action';
 import { catchError, exhaustMap, map, of } from 'rxjs';
 import { TaskService } from '@task-manager/ng-api-client/tasks';
-import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Injectable()
 export class TaskEffects {
@@ -67,6 +67,5 @@ export class TaskEffects {
   constructor(
     private readonly actions$: Actions,
     private readonly taskService: TaskService,
-    private readonly snackBar: MatSnackBar
   ) {}
 }
