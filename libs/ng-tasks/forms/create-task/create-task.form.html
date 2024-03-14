@@ -6,6 +6,8 @@
     <mat-error>Label is required</mat-error>
     } @else if (form.controls.label.hasError('minlength')) {
     <mat-error>Label must be at least 3 characters</mat-error>
+    } @else if (form.controls.label.hasError('maxlength')) {
+    <mat-error>Label must be at most 100 characters</mat-error>
     }
   </mat-form-field>
   <mat-form-field
