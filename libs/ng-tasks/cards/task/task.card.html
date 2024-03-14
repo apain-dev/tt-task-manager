@@ -3,7 +3,7 @@
     <mat-card-title>TASK - {{ task.id }}</mat-card-title>
   </mat-card-header>
   <mat-card-content class="h-full !flex flex-col">
-    <p class="flex-grow" data-testid="task-card-label">{{ task.label }}</p>
+    <p class="flex-grow break-words" data-testid="task-card-label">{{ task.label }}</p>
     <div class="p-0.5 notifier mt-auto w-fit bg-secondary">
       @if (task.done) {
       <mat-icon
