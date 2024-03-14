@@ -50,8 +50,17 @@ export const ApiChangeTaskStateSuccess = createAction(
   '[Task] API Complete Task Success',
   props<{ task: Task }>()
 );
+export const ApiChangeTaskStateError = createAction(
+  '[Task] API Complete Task Error',
+  props<{ error: Error }>()
+);
 
 export const ApiDeleteTaskSuccess = createAction(
   '[Task] API Delete Task Success',
   props<{ task: Task }>()
+);
+
+export const ApiDeleteTaskFailure = createAction(
+  '[Task] API Delete Task Failure',
+  props<{ error: unknown }>()
 );
