@@ -10,7 +10,7 @@
 
 ## Useful commands
 * serve: ```npx nx serve task-manager```
-* e2e: ```npx nx run  task-manager-e2e:e2e```
+* e2e: ```npx playwright install && npx nx run  task-manager-e2e:e2e```
 * test: ```npx nx run-many --target=test```
 * lint: ```npx nx run-many --target=lint```
 * build: ```npx nx build task-manager``` (add --prod for production build)
