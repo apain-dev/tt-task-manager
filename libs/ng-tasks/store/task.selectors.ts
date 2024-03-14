@@ -15,12 +15,13 @@ export const selectFilteredTasks = createSelector(
       if (!!filters.label && !task.label.includes(filters.label)) {
         return false;
       }
-      return !(filters.done !== null && filters.done !== undefined && task.done !== filters.done);
+      return !(
+        filters.done !== null &&
+        filters.done !== undefined &&
+        task.done !== filters.done
+      );
     });
   }
 );
 
-export const selectTasksState = (state: AppState) => state.tasks;
-
 export const selectTaskCount = (state: AppState) => state.tasks.tasks.length;
-export const selectHasTasks = (state: AppState) => state.tasks.tasks.length > 0 && !state.tasks.loading;

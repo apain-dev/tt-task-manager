@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@import '../../../ng-theme/scss/theme';
+@use '../../../ng-theme/scss/theme' as theme;
 
 
 .notifier {
@@ -7,27 +7,27 @@
 }
 
 mat-card.done {
-  border-left: 3px solid mat.get-theme-color($my-theme, primary, default);
+  border-left: 3px solid mat.get-theme-color(theme.$my-theme, primary, default);
   .notifier {
-    background-color: mat.get-theme-color($my-theme, background, status-bar);
+    background-color: mat.get-theme-color(theme.$my-theme, background, status-bar);
     span {
-      color: mat.get-theme-color($my-theme, primary, default);
+      color: mat.get-theme-color(theme.$my-theme, primary, default);
     }
     mat-icon {
-      color: mat.get-theme-color($my-theme, primary, default);
+      color: mat.get-theme-color(theme.$my-theme, primary, default);
     }
   }
 }
 
 mat-card.todo {
-  border-left: 3px solid mat.get-theme-color($my-theme, warn, default);
+  border-left: 3px solid mat.get-theme-color(theme.$my-theme, warn, default);
   .notifier {
-    background-color:  mat.get-theme-color($my-theme, background, status-bar);
+    background-color:  mat.get-theme-color(theme.$my-theme, background, status-bar);
     span {
-      color: mat.get-theme-color($my-theme, warn, default);
+      color: mat.get-theme-color(theme.$my-theme, warn, default);
     }
     mat-icon {
-      color: mat.get-theme-color($my-theme, warn, default);
+      color: mat.get-theme-color(theme.$my-theme, warn, default);
     }
   }
 }

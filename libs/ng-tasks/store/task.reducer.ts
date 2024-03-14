@@ -4,53 +4,71 @@ import {
   ApiCreateTaskSuccess,
   ApiDeleteTaskSuccess,
   ApiListTasksSuccess,
-  listTasks, setTaskFilters
+  changeTaskState,
+  createTask,
+  listTasks,
+  setTaskFilters,
 } from './task.action';
 import { TasksState } from './store.model';
 
-export const initialState: TasksState = {
+const initialState: TasksState = {
   tasks: [],
   loading: false,
   filters: {},
-  error: null
+  error: null,
 };
 export const taskReducer = createReducer<TasksState>(
   initialState,
-  on(listTasks, (state, { id, label, done }) => {
+  on(listTasks, (state): TasksState => {
     return {
       ...state,
-      loading: true
+      loading: true,
     };
   }),
-  on(ApiListTasksSuccess, (state, { tasks }) => {
+  on(ApiListTasksSuccess, (state, { tasks }): TasksState => {
     return {
       ...state,
       tasks,
-      loading: false
+      loading: false,
     };
   }),
-  on(ApiCreateTaskSuccess, (state, { task }) => {
+  on(createTask, (state): TasksState => {
     return {
       ...state,
-      tasks: [...state.tasks, task]
+      loading: true,
     };
   }),
-  on(ApiChangeTaskStateSuccess, (state, { task }) => {
+  on(ApiCreateTaskSuccess, (state, { task }): TasksState => {
     return {
       ...state,
-      tasks: state.tasks.map((t) => t.id === task.id ? task : t)
+      tasks: [...state.tasks, task],
+      loading: false,
     };
   }),
-  on(ApiDeleteTaskSuccess, (state, { task }) => {
+  on(changeTaskState, (state): TasksState => {
     return {
       ...state,
-      tasks: state.tasks.filter((t) => t.id !== task.id)
+      loading: true,
     };
   }),
-  on(setTaskFilters, (state, filters) => {
+  on(ApiChangeTaskStateSuccess, (state, { task }): TasksState => {
     return {
       ...state,
-      filters
+      tasks: state.tasks.map((t) => (t.id === task.id ? task : t)),
+      loading: false,
+    };
+  }),
+  on(ApiDeleteTaskSuccess, (state, { task }): TasksState => {
+    return {
+      ...state,
+      tasks: state.tasks.filter((t) => t.id !== task.id),
+      loading: false,
+    };
+  }),
+  on(setTaskFilters, (state, filters): TasksState => {
+    return {
+      ...state,
+      filters: filters.filters,
     };
   })
 );

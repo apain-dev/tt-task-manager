@@ -1,0 +1,5 @@
+@use "@angular/material" as mat;
+@use './theme' as theme;
+@use './typo' as typo;
+
+@include mat.all-component-themes(theme.$my-theme);

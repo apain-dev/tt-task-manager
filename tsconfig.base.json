@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@task-manager/ng-api-client/*": ["libs/ng-api-client/*"],
       "@task-manager/ng-api-client/": ["libs/ng-api-client/index.ts"],
+      "@task-manager/ng-api-client/*": ["libs/ng-api-client/*"],
       "@task-manager/ng-pages/*": ["libs/ng-pages/*"],
       "@task-manager/ng-tasks": ["libs/ng-tasks/index.ts"],
       "@task-manager/ng-tasks/*": ["libs/ng-tasks/*"],

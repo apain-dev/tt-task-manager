@@ -3,7 +3,7 @@ import { CreateTask, Task } from '@task-manager/ng-api-client/tasks';
 
 export const listTasks = createAction(
   '[Task] List Tasks',
-  props<{ id?: number, label?: string, done?: boolean }>()
+  props<{ id?: number; label?: string; done?: boolean }>()
 );
 
 export const createTask = createAction(
@@ -13,7 +13,7 @@ export const createTask = createAction(
 
 export const changeTaskState = createAction(
   '[Task] Complete Task',
-  props<Pick<Task, 'id' | 'done'>>()
+  props<{ taskId: number; done: boolean }>()
 );
 
 export const deleteTask = createAction(
@@ -23,7 +23,7 @@ export const deleteTask = createAction(
 
 export const setTaskFilters = createAction(
   '[Task] Set Task Filters',
-  props<Partial<Pick<Task, 'id' | 'done' | 'label'>>>()
+  props<{ filters: Partial<Pick<Task, 'id' | 'done' | 'label'>> }>()
 );
 
 export const ApiListTasksSuccess = createAction(
@@ -33,9 +33,8 @@ export const ApiListTasksSuccess = createAction(
 
 export const ApiListTasksFailure = createAction(
   '[Task] API List Tasks Failure',
-  props<{ error: any }>()
+  props<{ error: unknown }>()
 );
-
 
 export const ApiCreateTaskSuccess = createAction(
   '[Task] API Create Task Success',
@@ -44,7 +43,7 @@ export const ApiCreateTaskSuccess = createAction(
 
 export const ApiCreateTaskFailure = createAction(
   '[Task] API Create Task Failure',
-  props<{ error: any }>()
+  props<{ error: unknown }>()
 );
 
 export const ApiChangeTaskStateSuccess = createAction(

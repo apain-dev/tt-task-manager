@@ -36,7 +36,7 @@ export class TaskEffects {
     return this.actions$.pipe(
       ofType(changeTaskState),
       exhaustMap((props) =>
-        this.taskService.changeTaskState(props.id, props.done).pipe(map((task) => ApiChangeTaskStateSuccess({ task })))
+        this.taskService.changeTaskState(props.taskId, props.done).pipe(map((task) => ApiChangeTaskStateSuccess({ task })))
       )
     );
   })

@@ -1,9 +1,4 @@
 <h2 mat-dialog-title>Add task</h2>
 <mat-dialog-content>
-  <add-task-form (submit$)="formSubmitted($event)"></add-task-form>
+  <tm-tasks-create (submit$)="formSubmitted($event)"></tm-tasks-create>
 </mat-dialog-content>
-<!--
-<mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
-</mat-dialog-actions>-->

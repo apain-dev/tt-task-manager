@@ -3,25 +3,37 @@
     <mat-card-title>TASK - {{ task.id }}</mat-card-title>
   </mat-card-header>
   <mat-card-content class="h-full !flex flex-col">
-    <p class="flex-grow">
-      {{ task.label }}
-    </p>
-    <div class="p-0.5 notifier mt-auto w-fit">
+    <p class="flex-grow" data-testid="task-card-label">{{ task.label }}</p>
+    <div class="p-0.5 notifier mt-auto w-fit bg-secondary">
       @if (task.done) {
-        <mat-icon class="align-middle" style="transform: scale(0.6)" fontIcon="check_circle"></mat-icon>
-        <span class="mx-1 text-sm">done</span>
+      <mat-icon
+        class="align-middle"
+        style="transform: scale(0.6)"
+        fontIcon="check_circle"
+      ></mat-icon>
+      <span class="mx-1 text-sm">done</span>
       } @else {
-        <mat-icon class="align-middle" style="transform: scale(0.6)" fontIcon="hourglass_empty"></mat-icon>
-        <span class="mx-1 text-sm">In progress</span>
+      <mat-icon
+        class="align-middle"
+        style="transform: scale(0.6)"
+        fontIcon="hourglass_empty"
+      ></mat-icon>
+      <span class="mx-1 text-sm">In progress</span>
       }
     </div>
   </mat-card-content>
   <mat-card-footer class="mt-3 p-2">
     @if (!task.done) {
-      <button mat-stroked-button color="primary" (click)="changeTaskState(true)">Done</button>
+    <button mat-stroked-button color="primary" (click)="changeTaskState(true)">
+      Done
+    </button>
     } @else {
-      <button mat-stroked-button color="primary" (click)="changeTaskState(false)">In progress</button>
+    <button mat-stroked-button color="primary" (click)="changeTaskState(false)">
+      In progress
+    </button>
     }
-    <button class="ml-3" mat-stroked-button color="warn" (click)="deleteTask()">Delete</button>
+    <button class="ml-3" mat-stroked-button color="warn" (click)="deleteTask()">
+      Delete
+    </button>
   </mat-card-footer>
 </mat-card>

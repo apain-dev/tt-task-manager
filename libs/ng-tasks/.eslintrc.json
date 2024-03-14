@@ -9,6 +9,12 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
+        "@angular-eslint/component-class-suffix": [
+          "error",
+          {
+            "suffixes": ["Form", "Component", "Card"]
+          }
+        ],
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -21,7 +27,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "task-manager",
+            "prefix": "tm-tasks",
             "style": "kebab-case"
           }
         ]
