@@ -11,6 +11,20 @@
 * lint: ```npx nx run-many --target=lint```
 * build: ```npx nx build task-manager``` (add --prod for production build)
 
+
+## Features
+This app allows you to manage your tasks. You can add, remove and mark tasks as completed.
+This app use the following technologies:
+* **Angular**: A platform and framework for building single-page client applications
+* **Nx**: Extensible Dev Tools for Monorepos
+* **Nx Cache**: A distributed cache for Nx
+* **TailwindCSS**: A utility-first CSS framework
+* **Playwright**: A browser automation library
+* **Jest**: Delightful JavaScript Testing
+* **NgRx**: Reactive State for Angular
+* **ESLint**: Find and fix problems in your typescript code
+* **Husky**: Git hooks made easy
+
 ## Start the application
 
 Run `npx nx serve task-manager` to start the development server. Happy coding!
